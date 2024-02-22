@@ -12,7 +12,7 @@ function App() {
 	useEffect(() => {
 		setTimeout(() => {
 			if (percentage < 100) {
-				setPercentage(percentage + 0.005)
+				setPercentage(percentage + 0.5)
 			}
 		}, 1)
 	}, [percentage])
@@ -41,7 +41,7 @@ function App() {
 				{elements.map((element, index) => (
 					<div className='minor-container' key={index}>
 						<img className="logo" src={element.icon} alt="foto de rede social" />
-						<h1>{Math.ceil(element.number * percentage)}</h1>
+						<h1>{Math.ceil(element.number * percentage / 100)}</h1>
 						<h5>{element.msg}</h5>
 					</div>
 				))}
